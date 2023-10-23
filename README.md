@@ -22,6 +22,7 @@ JSON:
   ...
 ```
 
+JavaScript:
 ``` javascript
 import { isotopes,getInfoByElement,getInfoByAtomicNumber } from 'all-isotopes';
 console.log(isotopes);
