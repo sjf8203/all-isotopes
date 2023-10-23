@@ -1,0 +1,27 @@
+{
+  "name": "all-isotopes",
+  "version": "1.0.0",
+  "description": "JSON containing information about isotopes with JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \\\"Error: no test specified\\\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sjf8203/all-isotopes.git"
+  },
+  "keywords": [
+    "isotope",
+    "abundance",
+    "mass"
+  ],
+  "author": "Jianfeng Song <sjf8203@126.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sjf8203/all-isotopes/issues"
+  },
+  "homepage": "https://github.com/sjf8203/all-isotopes#readme",
+  "devDependencies": {
+    "fs": "0.0.1-security"
+  }
+}
