@@ -62,6 +62,7 @@ readFile(filename, 'utf8', function(err, data){
         }
       }      
       iso_data.push({
+        'mass_number' : item[2],
         'nuclide' : key +'-'+ item[2],
         'mass': item[3],
         'abundance': item[4],
