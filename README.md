@@ -10,11 +10,13 @@ JSON:
     "element": "H",
     "isotopes": [
       {
+        "mass_number": 1,
         "nuclide": "H-1",
         "mass": 1.00782503223,
         "abundance": 0.999885
       },
       {
+        "mass_number": 2,
         "nuclide": "H-2",
         "mass": 2.01410177812,
         "abundance": 0.000115
