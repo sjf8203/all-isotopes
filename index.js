@@ -16,30 +16,30 @@ function getInfoByAtomicNumber(atomicNumber) {
   return elementInfo;
 }
 
-function getCategorizedIsotopes(theElement) {
-  if (!theElement) return [];
+function getCategorizedIsotopes(element) {
+  if (!element) return [];
   const categorizedIsotopes = {
     "stable": [],
     "unstable": []
   };
-  isotopes.forEach(element => {
-    element.isotopes.forEach(isotope => {
-      const categorizedIsotope = {
-        "atomic_number": element.atomic_number,
-        "element": element.element,
-        "mass_number": isotope.mass_number,
-        "nuclide": isotope.nuclide,
-        "mass": isotope.mass,
-        "abundance": isotope.abundance
-      };
-  
-      if (isotope.abundance > 0) {
-        categorizedIsotopes["stable"].push(categorizedIsotope);
-      } else {
-        categorizedIsotopes["unstable"].push(categorizedIsotope);
-      }
-    });
+  element.isotopes.forEach(isotope => {
+    const categorizedIsotope = {
+      "atomic_number": element.atomic_number,
+      "element": element.element,
+      "mass_number": isotope.mass_number,
+      "nuclide": isotope.nuclide,
+      "mass": isotope.mass,
+      "abundance": isotope.abundance
+    };
+
+    if (isotope.abundance > 0) {
+      categorizedIsotopes["stable"].push(categorizedIsotope);
+    } else {
+      categorizedIsotopes["unstable"].push(categorizedIsotope);
+    }
   });
+
+  return categorizedIsotopes;
 }
 
 function categorizeByElement(element) {
