@@ -2,8 +2,14 @@
 JSON containing information about isotopes with JavaScript
 
 ## Usage
-JSON:
+import the package：
+``` javascript
+import * as allIso from 'all-isotopes';
 ```
+(1) get all isotopes:
+``` javascript
+console.log(allIso.isotopes);
+output:
 [
   {
     "atomic_number": 1,
@@ -22,19 +28,69 @@ JSON:
         "abundance": 0.000115
       },
   ...
+]
+```
+(2) get info by element symbol: 
+``` javascript
+const DsInfo = allIso.getInfoByElement('Ds');
+console.log(DsInfo);
+output:
+{
+  "atomic_number": 110,
+  "element": "Ds",
+  "isotopes": [
+    {
+      "mass_number": 267,
+      "nuclide": "Ds-267",
+      "mass": 267.14377,
+      "abundance": 0
+    },   
+    ...
+}
 ```
 
-JavaScript:
+(3) or get info by atomic number: 
 ``` javascript
-import { isotopes,getInfoByElement,getInfoByAtomicNumber } from 'all-isotopes';
-console.log(isotopes);
+const infoByNumber2 = allIso.getInfoByAtomicNumber(2);
+console.log(infoByNumber2);
+```
 
-const DsInfo = getInfoByElement('Ds');
-console.log(DsInfo);
+(4) get categorized isotopes by element symbol:
+``` javascript
+const isoOfLi = allIso.categorizeByElement('Li');
+console.log(isoOfLi);
+output:
+{
+  "stable":[
+    {
+    "atomic_number": 3,
+    "element": "Li",
+    "mass_number": 6,
+    "nuclide": "Li-6",
+    "mass": 6.0151228874,
+    "abundance": 0.0759
+    },
+  ...
+  ],
+  "unstable":[
+    {
+    "atomic_number": 3,
+    "element": "Li",
+    "mass_number": 3,
+    "nuclide": "Li-3",
+    "mass": 3.0308,
+    "abundance": 0
+    },
+  ... 
+  ]  
+... 
+}
+```
 
-const HeInfo = getInfoByAtomicNumber(2);
-console.log(HeInfo);
-
+(5) or get categorized isotopes by atomic number
+``` javascript
+const isoOfNumber5 = allIso.categorizeByAtomicNumber(5);
+console.log(isoOfNumber5);
 ```
 
 ## Data
