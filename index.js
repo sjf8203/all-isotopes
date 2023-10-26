@@ -1,5 +1,15 @@
 import isotopes from './allIsotopes.json';
 
+let elements = isotopes.reduce(function(obj, element) {
+	obj[element.element] = element;
+	return obj;
+}, {});
+
+let numbers = isotopes.reduce(function(obj, element) {
+  obj[element.atomic_number] = element;
+  return obj;
+}, {});
+
 function getInfoByElement(element) {
   const elementInfo = isotopes.find(item => item.element === element);
 
@@ -54,6 +64,8 @@ function categorizeByAtomicNumber(atomicNumber) {
 
 export {
   isotopes,
+  elements,
+  numbers,
   getInfoByElement,
   getInfoByAtomicNumber,
   categorizeByElement,

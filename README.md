@@ -1,4 +1,4 @@
-# isotopes
+# all-isotopes
 JSON containing information about isotopes with JavaScript
 
 ## Usage
@@ -30,8 +30,10 @@ output:
   ...
 ]
 ```
-(2) get info by element symbol: 
+(2) get info by element's symbol: 
 ``` javascript
+const DsInfo = allIso.elements.Ds;
+or
 const DsInfo = allIso.getInfoByElement('Ds');
 console.log(DsInfo);
 output:
@@ -51,6 +53,8 @@ output:
 
 (3) or get info by atomic number: 
 ``` javascript
+const infoByNumber2 = allIso.numbers[2];
+or
 const infoByNumber2 = allIso.getInfoByAtomicNumber(2);
 console.log(infoByNumber2);
 ```
